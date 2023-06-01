@@ -1,8 +1,11 @@
 package com.example.login_funcional
 
+import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import org.json.JSONArray
@@ -15,7 +18,7 @@ import java.net.URL
 
 
 class home : AppCompatActivity() {
-
+    private lateinit var nextScreenButton: Button
     private lateinit var pokemonListView: ListView
     private lateinit var pokemonAdapter: ArrayAdapter<String>
 
@@ -23,6 +26,11 @@ class home : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        nextScreenButton = findViewById(R.id.lo_btn)
+        nextScreenButton.setOnClickListener {
+            val intent = Intent(this, opciones::class.java)
+            startActivity(intent)
+        }
 
 
         pokemonListView = findViewById(R.id.pokemonListView)
@@ -30,6 +38,9 @@ class home : AppCompatActivity() {
         pokemonListView.adapter = pokemonAdapter
 
         FetchPokemonTask().execute()
+
+
+
 
     }
 
@@ -68,6 +79,8 @@ class home : AppCompatActivity() {
             pokemonAdapter.addAll(pokemonList)
         }
     }
+
+
 }
 
 

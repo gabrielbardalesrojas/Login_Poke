@@ -7,6 +7,8 @@ import android.widget.Button
 import android.widget.Toast
 import android.view.View
 import android.widget.EditText
+import android.text.method.PasswordTransformationMethod
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -51,5 +53,8 @@ class MainActivity : AppCompatActivity() {
         val validPassword = "contraseña123"
 
         return email == validEmail && password == validPassword
+    }
+    fun applyPasswordTransformation(editText: EditText) {
+        editText.transformationMethod = PasswordTransformationMethod.getInstance()
     }
 }

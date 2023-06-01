@@ -9,16 +9,29 @@
     android:background="@drawable/fondo"
     tools:context=".registro">
 
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ray"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="#F4B922"
+        android:layout_marginBottom="20dp"/>
+
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         app:cardCornerRadius="10dp"
         android:layout_marginStart="17dp"
         android:layout_marginEnd="17dp"
+
         android:layout_height="wrap_content" >
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:background="#CC851D"
             android:orientation="vertical">
             <RelativeLayout
                 android:layout_width="match_parent"
